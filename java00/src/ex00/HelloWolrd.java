@@ -1,4 +1,4 @@
-package java00;
+package ex00;
 
 public class HelloWolrd 
 {
