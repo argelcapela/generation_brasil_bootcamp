@@ -4,7 +4,7 @@ valores de pontuação de uma atividade e o escreva em seguida.
 Encontre após a maior pontuação e a apresente. 
 */
 programa
-{
+{
 	funcao inicio()
 	{
 	//vars
@@ -29,10 +29,10 @@ programa
 		i = 0
 		enquanto (i < 5)
 		{	
-			escreva ("\nPontuação #" + (i + 1) + ", Valor: " + valores[i])
+			escreva ("\nPontuação #" + (i + 1) + ": " + valores[i])
 			i++
 		}
-		escreva ("\nA maior pontuação foi: " + maiorValor)
+		escreva ("\n\nA maior pontuação foi: " + maiorValor)
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -40,7 +40,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 654; 
+ * @POSICAO-CURSOR = 720; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

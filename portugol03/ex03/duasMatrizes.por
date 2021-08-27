@@ -60,7 +60,7 @@ programa
 		// calcular e mostrar M1
 		x = 0
 		y = 0
-		escreva("M1:\n")
+		escreva("M1 (N1 + N2):\n")
 		enquanto (x < 4)
 		{
 			enquanto(y < 6)
@@ -76,7 +76,7 @@ programa
 		// calcular e mostrar M2
 		x = 0
 		y = 0
-		escreva("\nM2:\n")
+		escreva("\nM2 (N1 - N2):\n")
 		enquanto (x < 4)
 		{
 			enquanto(y < 6)
@@ -96,7 +96,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3; 
+ * @POSICAO-CURSOR = 1414; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
