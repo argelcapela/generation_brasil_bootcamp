@@ -35,7 +35,7 @@ programa
 					// soma os valores inseridos
 					soma += valores[x][y]
 					// soma as diagonais
-					se (x == y)1
+					se (x == y)
 						somaDiagonais += valores[x][y]
 				y++
 			}
@@ -68,7 +68,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 719; 
+ * @POSICAO-CURSOR = 677; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
