@@ -20,15 +20,20 @@ public class multiplicaElePor3 {
 	public static void main(String[] args) {
 		//vars
 		Scanner read;
-				
+		int numeroDigitado;	
+		
 		read = new Scanner(System.in);
 		//input
-				
-		//processing
-				
-		//output
-				
-		read.close();
+			System.out.println("Digite um número: ");
+			numeroDigitado = read.nextInt();
+		//processing e //output
+			while (numeroDigitado < 100)
+			{
+				System.out.println("O número está com o valor de: " + numeroDigitado);
+				numeroDigitado *= 3;
+			}
+			System.out.println("O número está com o valor de: " + numeroDigitado);
+			read.close();
 	}
 
 }

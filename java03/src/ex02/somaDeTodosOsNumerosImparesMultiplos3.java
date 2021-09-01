@@ -14,17 +14,22 @@ public class somaDeTodosOsNumerosImparesMultiplos3 {
 
 	public static void main(String[] args) {
 		//vars
-		Scanner read;
-				
-		read = new Scanner(System.in);
-		//input
-				
-		//processing
-				
+			Scanner read;
+			int somaNumerosImpares;
+			
+			somaNumerosImpares = 0;		
+			read = new Scanner(System.in);
+		//input, processing
+			for (int nInicial = 1; nInicial <= 500; nInicial++)
+			{
+				if ((nInicial % 2 != 0) && (nInicial % 3 == 0))
+				{
+					somaNumerosImpares += nInicial;
+				}
+			}
 		//output
-				
-		read.close();
-
+			System.out.println("A soma é: " + somaNumerosImpares);	
+			read.close();
 	}
 
 }

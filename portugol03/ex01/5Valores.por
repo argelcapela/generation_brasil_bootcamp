@@ -11,10 +11,10 @@ programa
 		real valores[5]
 		real maiorValor
 		inteiro i
-	//input
+	
 		maiorValor = 0.0
 		i = 0
-	//processing
+	//input and processing
 		escreva ("Entre com os valores da Atividade: \n")
 		enquanto (i < 5)
 		{	
@@ -40,7 +40,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 720; 
+ * @POSICAO-CURSOR = 464; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

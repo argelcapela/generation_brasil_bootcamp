@@ -12,16 +12,27 @@ public class somaDeTodosOsNumerosAteONumeroDigitado {
 
 	public static void main(String[] args) {
 		//vars
-		Scanner read;
+			Scanner read;
+			int numeroDigitado;
+			int somatorio;
+			int nInicial;
 				
-		read = new Scanner(System.in);
+			read = new Scanner(System.in);
+			somatorio = 0;
 		//input
-				
+			System.out.println("Digite um número: ");
+			numeroDigitado = read.nextInt();
+			nInicial = numeroDigitado;				
 		//processing
-				
+			do
+			{
+				somatorio += numeroDigitado;
+				numeroDigitado--;
+			}
+			while(numeroDigitado > 0);
 		//output
-				
-		read.close();
+			System.out.println("A soma de 1 até " + nInicial + " é: " + somatorio);	
+			read.close();
 	}
 
 }

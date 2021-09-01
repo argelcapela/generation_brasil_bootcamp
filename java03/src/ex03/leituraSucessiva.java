@@ -18,16 +18,28 @@ public class leituraSucessiva {
 
 	public static void main(String[] args) {
 		//vars
-		Scanner read;
-				
-		read = new Scanner(System.in);
-		//input
-				
-		//processing
-				
+			Scanner read;
+			double totalSomatorio;
+			int qtdValoresInseridos;
+			double temp;
+			
+			qtdValoresInseridos = 0;
+			totalSomatorio = 0;
+			temp = 0;
+			read = new Scanner(System.in);
+		//input and processing
+			while (temp >= 0)
+			{
+				totalSomatorio += temp;
+				qtdValoresInseridos++;
+				System.out.println("Número #" + qtdValoresInseridos + " : ");
+				temp = read.nextDouble();
+			}
+			qtdValoresInseridos -= 1;			
 		//output
-				
-		read.close();
+			System.out.println("O total de valores inseridos é: " + qtdValoresInseridos);
+			System.out.println("O total do somatório é: " + totalSomatorio);
+			read.close();
 	}
 
 }

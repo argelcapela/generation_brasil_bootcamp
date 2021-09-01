@@ -24,19 +24,19 @@ public class tresNumerosEmOrdemCrescente {
 		//processing
 		// algoritmo chato de entender kkkkk mas super simples!!!! kkkkk
 		
-		if (n1 < n2)
+		if (n1 > n2)
 		{
 			aux = n1;
 			n1 = n2;
 			n2 = aux; 
 		}
-		if (n2 < n3)
+		if (n2 > n3)
 		{
 			aux = n2;
 			n2 = n3;
 			n3 = aux;
 		}
-		if (n1 < n2)
+		if (n1 > n2)
 		{
 			aux = n1;
 			n1 = n2;
