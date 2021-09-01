@@ -1,3 +1,7 @@
+/*
+1) Faça um sistema que leia a idade de uma pessoa expressa
+em anos, meses e dias e mostre-a expressa apenas em dias.
+*/
 package ex01;
 
 import java.util.Scanner;

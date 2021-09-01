@@ -1,3 +1,8 @@
+/*
+2. Faça um sistema que leia a idade de uma pessoa 
+expressa em dias e mostre-a expressa em anos, 
+meses e dias.
+*/
 package ex02;
 import java.util.Scanner;
 
@@ -8,7 +13,6 @@ public class idadeEmDiasMesesEAnos
 			int qtdAnos;
 			int qtdMeses;
 			int qtdDias;
-			int idade;
 			Scanner read;
 			
 			read = new Scanner(System.in);			

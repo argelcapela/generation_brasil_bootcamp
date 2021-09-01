@@ -1,3 +1,9 @@
+/*
+4. Escreva um sistema que leia três números inteiros
+e positivos (A, B, C) e calcule a seguinte 
+expressão: 
+*/
+
 package ex04;
 
 import java.util.Scanner;
@@ -28,8 +34,9 @@ public class tresNumerosInteiros {
 		R = Math.pow((A + B), 2);
 		S = Math.pow((A + C), 2);
 		D = (R + S) / 2;
-		System.out.println("R '= " + R);
-		System.out.println("D '= " + D);
-		System.out.println("S '= " + S);
+		System.out.println("R = " + R);
+		System.out.println("D = " + D);
+		System.out.println("S = " + S);
+		read.close();
 	}
 }
