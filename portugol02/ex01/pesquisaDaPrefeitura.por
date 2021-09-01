@@ -25,7 +25,7 @@ programa
 		maiorSalario = 0.9
 		porcenSalarioAteCem = 0.0
 		temp = 0.0
-		qtdPessoas = 3 // posso controlar a quantidade de pessoas na pesquisa
+		qtdPessoas = 20 // posso controlar a quantidade de pessoas na pesquisa
 	//input and processing
 		escreva("Olá!\n")
 		para (inteiro i = 1; i <= qtdPessoas; i++)
@@ -66,7 +66,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1869; 
+ * @POSICAO-CURSOR = 2343; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

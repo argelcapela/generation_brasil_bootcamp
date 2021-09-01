@@ -23,14 +23,12 @@ grupos de empresas.
 ...
 0.25
 */
-
 programa
-{	
+{	
 	funcao inicio()
 	{
 	// variáveis	
 		real ipa // Índice de Poluição Aceitável
-		inteiro ng // Número do grupo
 
 		ipa = 0.0		
 	// entrada
@@ -66,7 +64,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1268; 
+ * @POSICAO-CURSOR = 0; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
