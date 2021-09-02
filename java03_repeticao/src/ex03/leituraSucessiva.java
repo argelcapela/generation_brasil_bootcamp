@@ -22,11 +22,13 @@ public class leituraSucessiva {
 			double totalSomatorio;
 			int qtdValoresInseridos;
 			double temp;
+			double media;
 			
 			qtdValoresInseridos = 0;
 			totalSomatorio = 0;
 			temp = 0;
 			read = new Scanner(System.in);
+			media = 0;
 		//input and processing
 			while (temp >= 0)
 			{
@@ -34,11 +36,15 @@ public class leituraSucessiva {
 				qtdValoresInseridos++;
 				System.out.println("Número #" + qtdValoresInseridos + " : ");
 				temp = read.nextDouble();
+				if(temp >= 0)
+					media += temp;
 			}
-			qtdValoresInseridos -= 1;			
+			qtdValoresInseridos -= 1;
+			media /= qtdValoresInseridos;
 		//output
 			System.out.println("O total de valores inseridos é: " + qtdValoresInseridos);
 			System.out.println("O total do somatório é: " + totalSomatorio);
+			System.out.println("A média é: " + media);
 			read.close();
 	}
 
