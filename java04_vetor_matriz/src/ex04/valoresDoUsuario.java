@@ -37,9 +37,13 @@ public class valoresDoUsuario {
 				{
 					System.out.printf("Matriz[%d][%d]: ", x, y);
 					valores[x][y] = read.nextInt();
-						soma += valores[x][y];
-						if (x == y)
-							somaDiagonais += valores[x][y];
+					// somar cada número que o usuario inserir!!	
+					soma = soma + valores[x][y];
+					// soma a diagonal principal
+					if (x == y)
+					{
+						somaDiagonais = somaDiagonais + valores[x][y];
+					}
 					y++;
 				}
 				System.out.println();
@@ -62,7 +66,7 @@ public class valoresDoUsuario {
 				x++;
 			}
 			System.out.println("A soma de todos os valores é: " + soma);
-			System.out.println("A soma das diagonais principais é: " + somaDiagonais);
+			System.out.println("A soma da Diagonal Principal é: " + somaDiagonais);
 			read.close();
 	}
 

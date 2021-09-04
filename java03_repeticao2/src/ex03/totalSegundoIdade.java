@@ -6,7 +6,7 @@
 	 
 	 -> Total de pessoas com mais de 50 anos. 
 	 
-	 -> O programa termina quando idade for =-99. 
+	 -> O programa termina quando idade for = -99. 
 	 
 	 -> ? 0 ? || ? digitar letra ao invéz de número? || ? etc? não pediu, não faço! hahahaha
 	 (WHILE) 
