@@ -46,12 +46,12 @@ public abstract class Conta {
 			return numero;
 		}
 	// methods
-		public void debit(double debit)
+		public void debito(double debito)
 		{
-			this.saldo -= debit;
+			this.saldo -= debito;
 		}
 			
-		public void credit(double credit)
+		public void credito(double credito)
 		{
 			if (this.saldo == 0)
 			{
@@ -63,7 +63,7 @@ public abstract class Conta {
 			}
 			else
 			{
-				this.saldo += credit;
+				this.saldo += credito;
 			}			
 		}
 		

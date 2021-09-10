@@ -35,15 +35,17 @@ public class ContaEmpresa extends Conta{
 			{
 				System.out.println("Você não pode fazer empréstimo de valores negativos!");
 			}
-			else if(emprestimo > 10000)
+			else if((this.emprestimoEmpresa - emprestimo) < 0)
 			{
-				System.out.println("Você não pode fazer empréstimo de valores negativos!");
+				System.out.println("O valor de empréstimos não pode ultrapassar R$ 10.000!");
 			}
 			else
 			{
-				super.credit(emprestimo);				
+				super.credito(emprestimo);				
 				this.emprestimoEmpresa -= emprestimo;
-				System.out.println("Saldo atual é R$ " + this.emprestimoEmpresa);
+				System.out.printf("Você solicitou um empréstimo de R$ %.2f porém "
+								  + "seu Limite de Empréstimo é : R$ %.2f \n",
+								  emprestimo, this.emprestimoEmpresa);
 			}
 			
 		}
