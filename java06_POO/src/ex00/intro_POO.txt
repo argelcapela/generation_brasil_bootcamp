@@ -1,0 +1,13 @@
+classe - objeto
+inicio
+	-atributos
+	-construtor (qual o mínimo que essa classe deve ter?)
+		-sobrecarga (várias formas de fazer a mesma coisa!)
+	-encapsulamento (segurança de boate/ controla para não virar bahia)
+	-métodos
+		-sobrecarga (várias formas de fazer a mesma coisa!)
+		-sobreescrita (override)
+	-maluquices
+	-annotation - spring
+		-@Override
+fim
