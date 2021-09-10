@@ -2,6 +2,12 @@ package entities;
 
 public class ContaEstudantil extends Conta{
 	
+	@Override
+	public void correcao(int diaInformado) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	//atributo
 	private double limiteEstudantil;
 	
@@ -43,6 +49,24 @@ public class ContaEstudantil extends Conta{
 							  + "seu Limite de Empréstimo é : R$ %.2f \n",
 							  emprestimoEstudantil, this.limiteEstudantil);
 		}
+	}
+
+	@Override
+	public void pediTalao(int qtd) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pedirEmprestimo(double emprestimo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void usarLimite(double limite) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

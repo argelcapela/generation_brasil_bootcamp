@@ -1,77 +1,112 @@
 package entities;
 
-public abstract class Conta {
-	// attributes
-		public	int		numero;
-		public	String	cpf;
-		public	Double	saldo;
-		public	Boolean	ativo;
-	// constructor	
-		public Conta(int numero, String cpf) {
-			super();
-			this.numero = numero;
-			this.cpf = cpf;
-			this.saldo = 0.0;
-		}		
-	// encapsulation
-		public void setNumero(int numero) {
-			this.numero = numero;
-		}
+public abstract class Conta implements FazerContaAcessarMetodosDosFilhosComPolimorfismo {
 		
-		public String getCpf() {
-			return cpf;
-		}
+	//atributos
+
+	private int numero;
+	private String cpf;
+	private double saldo;
+	private boolean ativo;
 	
-		public void setCpf(String cpf) {
-			this.cpf = cpf;
-		}
+	//construtor
+	public Conta(int numero, String cpf) {
+		super();
+		this.numero = numero;
+		this.cpf = cpf;
+	}
 	
-		public Double getSaldo() {
-			return saldo;
-		}
 	
-		public void setSaldo(Double saldo) {
-			this.saldo = saldo;
-		}
-	
-		public Boolean getAtivo() {
-			return ativo;
-		}
-	
-		public void setAtivo(Boolean ativo) {
-			this.ativo = ativo;
-		}
-		
+	//encapsulamento
 		public int getNumero() {
 			return numero;
 		}
-	// methods
-		public void debito(double debito)
-		{
-			this.saldo -= debito;
+		public void setNumero(int numero) {
+			this.numero = numero;
 		}
-			
-		public void credito(double credito)
-		{
-			if (this.saldo == 0)
-			{
-				System.out.println("Conta não tem saldo!");
+		public String getCpf() {
+			return cpf;
+		}
+		public void setCpf(String cpf) {
+			this.cpf = cpf;
+		}
+		public double getSaldo() {
+			return saldo;
+		}
+		/*public void setSaldo(double saldo) {
+			this.saldo = saldo;
+		}*/
+		public boolean isAtivo() {
+			return ativo;
+		}
+		public void setAtivo(boolean ativo) {
+			this.ativo = ativo;
+		}
+	
+		
+		//metodos
+		
+		public void credito(double valor) {
+			this.saldo= this.saldo + valor;
+		}
+		public void debito(double valor) {
+			if (valor == 0) {
+				System.out.println("Debito vazio, impossivel realizar...");
 			}
-			else if(this.saldo < 0)
-			{
-				System.out.println("Você não creditar números negativos!");
+			else if(valor < 0) {
+				System.out.println("Valor informado negativo, impossivel realizar...");
 			}
-			else
-			{
-				this.saldo += credito;
-			}			
+			else if (valor > saldo) {
+				System.out.println("Saldo insulficiente, impossivel realizar...");
+			} 
+			else {
+				saldo -= valor;
+			}
 		}
 		
+		@Override
 		public String toString()
 		{
 			return ("Número da Conta: "+ this.numero +
 					"CPF: "+ this.cpf +
 					"SALDO: "+ this.saldo); 			
 		}
+
+
+		@Override
+		public void correcao(int diaInformado) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+		@Override
+		public void pediTalao(int qtd) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+		@Override
+		public void pedirEmprestimo(double emprestimo) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+		@Override
+		public void usarLimite(double limite) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+		@Override
+		public void usarEstudantil(double emprestimoEstudantil) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		
 
 }

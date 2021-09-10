@@ -2,7 +2,22 @@ package entities;
 
 public class ContaCorrente extends Conta 
 {
-	//atributos
+	@Override
+	public void pedirEmprestimo(double emprestimo) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void usarLimite(double limite) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void usarEstudantil(double emprestimoEstudantil) {
+		// TODO Auto-generated method stub
+		
+	}
+		//atributos
 		private int contadorTalao;
 	//construtor
 		public ContaCorrente(int numero, String cpf, int contadorTalao) 
@@ -26,6 +41,11 @@ public class ContaCorrente extends Conta
 			{
 				this.debito(30);
 			}
+		}
+		@Override
+		public void correcao(int diaInformado) {
+			// TODO Auto-generated method stub
+			
 		}
 	
 

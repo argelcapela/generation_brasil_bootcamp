@@ -2,6 +2,12 @@ package entities;
 
 public class ContaEspecial extends Conta {
 	
+	@Override
+	public void correcao(int diaInformado) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	//atributos
 	private double limite;
 	
@@ -39,6 +45,24 @@ public class ContaEspecial extends Conta {
 			System.out.println("Você não tem saldo, e está usando seu limite!\n"
 							+ "limite restande: " + this.limite);
 		}	
+	}
+
+	@Override
+	public void pediTalao(int qtd) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pedirEmprestimo(double emprestimo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void usarEstudantil(double emprestimoEstudantil) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

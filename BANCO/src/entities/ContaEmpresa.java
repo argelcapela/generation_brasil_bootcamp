@@ -49,5 +49,25 @@ public class ContaEmpresa extends Conta{
 			}
 			
 		}
+		@Override
+		public void correcao(int diaInformado) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void pediTalao(int qtd) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void usarLimite(double limite) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void usarEstudantil(double emprestimoEstudantil) {
+			// TODO Auto-generated method stub
+			
+		}
 	
 }

@@ -1,4 +1,4 @@
-package ex01;
+package ex01e02;
 
 public class Preguica extends Animal {
 	//constructor
