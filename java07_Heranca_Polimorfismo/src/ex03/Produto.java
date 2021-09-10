@@ -41,6 +41,7 @@ public class Produto {
 	public void comprar(int qtd)
 	{
 		this.qtdEstoque -= qtd;
+		System.out.println("Você comprou " + qtd + " " + this.getNome() + " com sucesso! ");
 	}
 	@Override
 	public String toString() {
