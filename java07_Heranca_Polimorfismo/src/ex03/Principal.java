@@ -46,8 +46,16 @@ public class Principal {
 		do 
 		{
 			limpa();
-			for(Produto p : produtos)			
+			if (produtos.isEmpty())
+			{
+				System.out.println("Estoque esgotado, obrigado e volte sempre!!");
+				break;
+			}
+			else
+			for(Produto p : produtos)
 				System.out.println(p.toString());
+				
+			
 			
 			System.out.print("\n\nInsira o código do produto que deseja comprar: ");
 			codProduto = leia.next();			
@@ -64,10 +72,6 @@ public class Principal {
 				}
 			}
 			
-			
-			for(Produto p : produtos)			
-				System.out.println(p.toString());
-			
 			System.out.print("\n\nContinuar comprando? (s-sim | n-não): ");
 			op = leia.next().charAt(0);
 			if (Character.toString(op).toLowerCase().equals("n"))
@@ -75,6 +79,11 @@ public class Principal {
 				System.out.println("Até Breve!");
 				break;
 			}
+			
+			
+			for(int i = 0; i < produtos.size();i++)
+				if (produtos.get(i).getQtdEstoque() == 0)
+					produtos.remove(i);
 			
 		
 		} while(continuarComprando);
