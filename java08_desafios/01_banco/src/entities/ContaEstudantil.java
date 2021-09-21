@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.Scanner;
+
 public class ContaEstudantil extends Conta{
 	
 	@Override
@@ -68,5 +70,22 @@ public class ContaEstudantil extends Conta{
 		// TODO Auto-generated method stub
 		
 	}
-
+	@Override
+	public void debito(double valor) {			
+		//super.debito(valor);
+		if ((super.getSaldo() - valor) < 0)
+		{
+			Scanner leia = new Scanner(System.in);
+			char op;
+			System.out.print("\n\nVocê não tem saldo. porém tem um empréstimo estudantil disponível de até "+ this.getLimiteEstudantil() +" , vai pegar? (s-sim|n-não): ");
+			op = leia.next().charAt(0);
+			this.usarEstudantil(valor);	
+			limpa();
+			System.out.println(this.toString());
+		}
+	}
+	@Override
+	public String toString() {
+		return "Saldo= R$ "+ super.getSaldo() + "\nLimite Estudantil Disponível= R$ " + this.getLimiteEstudantil();
+	}
 }

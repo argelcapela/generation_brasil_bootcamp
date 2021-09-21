@@ -41,27 +41,34 @@ public abstract class Conta implements FazerContaAcessarMetodosDosFilhosComPolim
 		}
 		public void setAtivo(boolean ativo) {
 			this.ativo = ativo;
+
 		}
 	
 		
 		//metodos
 		
 		public void credito(double valor) {
+			this.limpa();
 			this.saldo= this.saldo + valor;
+			System.out.println("Resultado do Movimento:\n\t R$ "+ valor +" foram creditados com sucesso!\n");
+			System.out.println(this.toString());
 		}
 		public void debito(double valor) {
+			this.limpa();
 			if (valor == 0) {
-				System.out.println("Debito vazio, impossivel realizar...");
+				System.out.println("Resultado do Movimento:\\n\\tDebito vazio, impossivel realizar...\n");
 			}
 			else if(valor < 0) {
-				System.out.println("Valor informado negativo, impossivel realizar...");
+				System.out.println("Resultado do Movimento:\\n\\tValor informado negativo, impossivel realizar...\n");
 			}
 			else if (valor > saldo) {
-				System.out.println("Saldo insulficiente, impossivel realizar...");
+				System.out.println("Resultado do Movimento:\n\tSaldo insulficiente, impossivel realizar...\n");
 			} 
 			else {
+				System.out.println("Resultado do Movimento:\n\t R$ "+ valor +" foram debitados com sucesso!\n");
 				saldo -= valor;
 			}
+			System.out.println(this.toString());
 		}
 		
 		@Override
@@ -106,6 +113,16 @@ public abstract class Conta implements FazerContaAcessarMetodosDosFilhosComPolim
 			// TODO Auto-generated method stub
 			
 		}
+
+
+		@Override
+		public void limpa() {
+			for (int x = 0; x < 50;x++)
+			{
+				System.out.println();
+			}
+		}
+		
 		
 		
 

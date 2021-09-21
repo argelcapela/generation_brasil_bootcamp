@@ -52,4 +52,11 @@ public class ContaPoupanca extends Conta {
 		// TODO Auto-generated method stub
 		
 	}
+	@Override
+	public String toString() {
+		return "Saldo= R$ "+ super.getSaldo() + "\nDia Aniversário para correção= " + this.getDiaAniversarioPoupanca();
+	}
+	
+	
+	
 }

@@ -47,6 +47,9 @@ public class ContaCorrente extends Conta
 			// TODO Auto-generated method stub
 			
 		}
-	
+		@Override
+		public String toString() {
+			return "Saldo= R$ "+ super.getSaldo() + "\nTalões Dispníveis= R$ " + this.getContadorTalao();
+		}
 
 }

@@ -14,12 +14,12 @@ public class TesteConta
 {
 	public static void limpa()
 	{
-		for (int x = 0; x < 10;x++)
+		for (int x = 0; x < 50;x++)
 		{
 			System.out.println();
 		}
 	}
-	public static void main(String[] args) 
+	public static void main(String[] args) throws InterruptedException 
 	{
 		// vars - controle de fluxo do programa
 						Scanner leia = new Scanner(System.in);			
@@ -30,19 +30,19 @@ public class TesteConta
 						int dia;
 						
 						boolean rodandoPrograma = true;
-						String tiposDeConta[] = {"CONTA POUPANÃ‡A", "CONTA CORRENTE", "CONTA ESPECIAL", "CONTA EMPRESA", "CONTA ESTUDANTIL"};
-			
+						String tiposDeConta[] = {"CONTA POUPANÇA", "CONTA CORRENTE", "CONTA ESPECIAL", "CONTA EMPRESA", "CONTA ESTUDANTIL"};
 		// vars - contas		
 						ArrayList<Conta> c = new ArrayList<Conta>();				//Creating arraylist
 						c.add(new ContaPoupanca(1, "xxx.xxx.xxx.xx", 5));			//Adding object in arraylist 
-						c.add(new ContaEmpresa(2, "xxx.xxx.xxx.xx", 10000));  
-						c.add(new ContaEspecial(3, "xxx.xxx.xxx.xx", 1000));  
+						c.add(new ContaCorrente(5, "xxx.xxx.xxx.xx", 3));	
+						c.add(new ContaEspecial(3, "xxx.xxx.xxx.xx", 1000));
+						c.add(new ContaEmpresa(2, "xxx.xxx.xxx.xx", 10000)); 
 						c.add(new ContaEstudantil(4, "xxx.xxx.xxx.xx", 5000));
-						c.add(new ContaCorrente(5, "xxx.xxx.xxx.xx", 3));
-		
+							
 		// processing
 			do
 			{
+						limpa();
 				// 1)Tela Inicial				
 						System.out.println("[NOME DO BANCO]");	
 						System.out.println("[SLOGAN]\n");								
@@ -51,11 +51,11 @@ public class TesteConta
 							System.out.println((i + 1) +" - " + tiposDeConta[i]);
 						}
 						System.out.println("6 - SAIR\n");	
-						System.out.print("DIGITE O CODIGO DA OPÃ‡ÃƒO SELECIONADA: ");						
+						System.out.print("DIGITE O CODIGO DA OPÇÃO SELECIONADA: ");						
 						opTC = leia.nextInt();
 						if (opTC == 6)
 						{
-							System.out.println("ATÃ‰ BREVE!");
+							System.out.println("ATÉ BREVE!");
 							break;
 						}
 						limpa();				
@@ -69,12 +69,10 @@ public class TesteConta
 					{
 						// 2.2 -> exibi rapidamente o saldo atual e em qual movimento estamos entre 1-10!		
 							System.out.println("MOVIMENTO " + x);
-							System.out.println("SALDO: R$ " + c.get(opTC).getSaldo());
-							if (opTC == 2)
-								System.out.println("LIMITE: R$ " + c.get(opTC).getLimite());
+							System.out.println(c.get(opTC).toString());
 						
 						// 2.3 -> pergunta se o movimento serÃ¡ creditar ou debitar da conta...
-							System.out.print("\n\nMovimento -> D-dÃ©bito ou C-crÃ©dito ? : ");
+							System.out.print("\n\nMovimento -> D-débito ou C-crédito ? : ");
 							debitoOuCredito = leia.next().toUpperCase().charAt(0);
 							System.out.print("Digite o valor: R$ ");
 							valor = leia.nextDouble();	
@@ -85,55 +83,48 @@ public class TesteConta
 							} else if (Character.toString(debitoOuCredito).toUpperCase().equals("C")) {
 								c.get(opTC).credito(valor);
 							} else {
-								System.out.println("NÃ£o foi informado um tipo correto...");
+								System.out.println("Não foi informado um tipo correto...");
 							}
 						
+							
 						// 2.5 -> controla se eu continuo ou paro
-							System.out.print("Continua S/N : ");
+							System.out.print("\nContinua S/N : ");
 							op = leia.next().toUpperCase().charAt(0);
 							if (Character.toString(op).toUpperCase().equals("N")) {
 								break;
 							}
+							limpa();
 					}
-					
+							
 				// 4) Depois dos 10 movimentos -> mostrar saldo atualizado!
-							System.out.println("\n\nSALDO ATUAL: R$ " + c.get(opTC).getSaldo() + "\n\n");	
-							if (opTC == 0) // poupanÃ§a
+							limpa();
+							System.out.println(c.get(opTC).toString());	
+							if (opTC == 0) // poupança
 							{								
-								System.out.println("Informe o dia de hoje : ");
+								System.out.print("Informe o dia de hoje : ");
 								dia = leia.nextInt();								
 								c.get(opTC).correcao(dia);
-								System.out.println("\nSALDO FINAL R$ " + c.get(opTC).getSaldo() + "\n");
 							}
 							else if(opTC == 1) // corrente
 							{
 								int qtdTalao = 0;
-								System.out.println("VocÃª deseja usar o TalÃ£o de Cheque?\n(S-SIM ou N-NÃƒO): ");
+								System.out.println("\nVocê deseja usar o Talão de Cheque?\n(S-SIM ou N-NÃO): ");
 								op = leia.next().charAt(0);
-								System.out.println("De 1 a 3, quantos TalÃµes vocÃª quer? : ");
+								System.out.print("De 1 a 3, quantos Talões você quer? : ");
 								qtdTalao = leia.nextInt();
 								if (qtdTalao > 0)
 								{
 									c.get(opTC).pediTalao(qtdTalao);
-								}
-								System.out.println("\nSALDO FINAL R$ " + c.get(opTC).getSaldo() + "\n");
-							}
-							else if(opTC == 2) // especial
-							{
-								
-							}
-							else if(opTC == 3) // empresa
-							{
-								
-							}
-							else if(opTC == 4) //estudantil
-							{
-								
-							}
-							
-			
+								}								
+							}												
 				// 5) Fim do Programa
-	
+							limpa();
+							System.out.println("***********************************************");
+							System.out.println("	SALDO FINAL: R$ " + c.get(opTC).getSaldo());
+							System.out.println("***********************************************");
+							Thread.sleep(2000);
+							
+							
 			} while(rodandoPrograma == true);
 	}
 }
