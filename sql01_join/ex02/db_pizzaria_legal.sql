@@ -61,13 +61,13 @@ SELECT * FROM tb_pizza where nomePizza like "%C%";
 SELECT *
 FROM tb_pizza
 INNER JOIN tb_categoria
-ON tb_pizza.codPizza = tb_categoria.codCategoria;
+ON tb_pizza.codCategoria = tb_categoria.codCategoria;
 
 -- Faça um select onde traga todos os Produtos de uma categoria específica (exemplo todos os produtos que são pizza doce).
 SELECT *
 FROM tb_pizza
-INNER JOIN tb_categoria
-ON tb_pizza.codPizza = tb_categoria.codCategoria
+RIGHT JOIN tb_categoria
+ON tb_pizza.codCategoria = tb_categoria.codCategoria
 WHERE tb_categoria.codCategoria=4;
 
 -- salve as querys para cada uma dos requisitos o exercício em um arquivo .SQL ou texto e coloque no seu GitHuB pessoal e compartilhe esta atividade.
