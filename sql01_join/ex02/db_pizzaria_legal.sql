@@ -32,6 +32,7 @@ INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Tradiciona
 INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Vegatariana", "Pizzas com uma mistura de carne animal e vegetais!");
 INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Vegana", "0 carne de animal!");
 INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Doce", "Pizzas recheadas com doce!");
+INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Malucas", "Pizzas completamente aleatórias!");
 
 SELECT * FROM tb_categoria;
 DROP TABLE tb_categoria;
@@ -45,6 +46,8 @@ INSERT INTO tb_pizza (codCategoria, nomePizza, precoPizza, origemPizza) VALUES (
 INSERT INTO tb_pizza (codCategoria, nomePizza, precoPizza, origemPizza) VALUES (3, "Super Vegana", 60, "Itália");
 INSERT INTO tb_pizza (codCategoria, nomePizza, precoPizza, origemPizza) VALUES (4, "Chocolate Amargo", 40, "Itália");
 INSERT INTO tb_pizza (codCategoria, nomePizza, precoPizza, origemPizza) VALUES (4, "Beijinho", 10, "Itália");
+INSERT INTO tb_pizza (codCategoria, nomePizza, precoPizza, origemPizza) VALUES (5, "Pizza Acarajé", 80, "Brasil");
+INSERT INTO tb_pizza (codCategoria, nomePizza, precoPizza, origemPizza) VALUES (5, "Pizza Guacamole", 70, "Brasil");
 DROP TABLE tb_pizza;
 
 -- Faça um select que retorne os Produtos com o valor maior do que 45 reais.

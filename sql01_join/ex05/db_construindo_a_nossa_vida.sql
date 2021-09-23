@@ -30,6 +30,7 @@ INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Material d
 INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Cozinha", "As melhores carnes que você já viu!");
 INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Banheiro", "Coisas para deixar seu churrasco ainda mais gostoso!");
 INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Sala de Estar", "Acompanhamento de salada!");
+INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Quintal", "Coisas para deixar o Quintal mais bonito!");
 
 SELECT * FROM tb_categoria;
 
@@ -50,6 +51,9 @@ INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) V
 INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (4, "Smart TV", 100, 10);
 INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (4, "Home Theather", 200, 10);
 
+INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (5, "Flores", 50, 30);
+INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (5, "Vassoura", 20, 50);
+
 SELECT * FROM tb_produto;
 -- Faça um select que retorne os Produtos com o valor maior do que 50 reais.
 SELECT * FROM tb_produto;
@@ -68,7 +72,6 @@ INNER JOIN tb_categoria
 ON tb_produto.codCategoria = tb_categoria.codCategoria;
 
 -- Faça um select onde traga todos os Produtos de uma categoria específica (exemplo todos os produtos que são aves ou legumes).
-
 SELECT *
 FROM tb_produto
 INNER JOIN tb_categoria

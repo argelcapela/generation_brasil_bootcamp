@@ -29,6 +29,7 @@ INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Frango", 	
 INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Carne", 	"As melhores carnes que você já viu!");
 INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Tempero", "Coisas para deixar seu churrasco ainda mais gostoso!");
 INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Salada", 	"Acompanhamento de salada!");
+INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Tira Gosto", 	"Coisinhas para beliscar e acompanhar o nosso Churrasco!");
 
 -- Popule esta tabela Produto com até 8 dados.
 INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (1, "Filé de Frango", 40, 10);
@@ -45,6 +46,9 @@ INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) V
 INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (4, "Alface", 10, 10);
 INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (4, "Tomate", 5, 10);
 INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (4, "Vinagrete", 7.50, 10);
+
+INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (5, "Batata Frita", 4, 10);
+INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (5, "Amendoim frito", 3, 10);
 
 -- Faça um select que retorne os Produtos com o valor maior do que 50 reais.
 SELECT * FROM tb_produto;
@@ -63,7 +67,6 @@ INNER JOIN tb_categoria
 ON tb_produto.codCategoria = tb_categoria.codCategoria;
 
 -- Faça um select onde traga todos os Produtos de uma categoria específica (exemplo todos os produtos que são aves ou legumes).
-
 SELECT *
 FROM tb_produto
 INNER JOIN tb_categoria

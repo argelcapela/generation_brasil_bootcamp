@@ -29,7 +29,7 @@ INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Dentário"
 INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Sex Shop", "Para ter noites mais apimentadas! kkk");
 INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Charópe", "Curar garganta!");
 INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Comprimido", "Aliviar!");
-
+INSERT INTO tb_categoria (nomeCategoria, descricaoCategoria) VALUES ("Primeiros Socorros", "Aliviar!");
 
 
 -- Popule esta tabela Produto com até 8 dados.
@@ -44,6 +44,9 @@ INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) V
 
 INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (4, "Doril", 10, 10);
 INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (4, "Dorflex", 10, 10);
+
+INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (5, "Ataduras", 10, 10);
+INSERT INTO tb_produto (codCategoria, nomeProduto, precoProduto, qtdNoEstoque) VALUES (5, "Água Oxigenada", 10, 10);
 
 -- Faça um select que retorne os Produtos com o valor maior do que 50 reais.
 SELECT * FROM tb_produto;
