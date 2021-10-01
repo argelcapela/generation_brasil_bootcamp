@@ -26,21 +26,21 @@ public class ProdutoController {
 	ProdutoRepository tb_produto_from_db;
 	
 	@GetMapping
-	public ResponseEntity<List<Produto>> GetAll(Long id_produto)
+	public ResponseEntity<List<Produto>> GetAll(Long idProduto)
 	{
 		return ResponseEntity.ok(tb_produto_from_db.findAll());
 	}
 	
 	@GetMapping("/{id_produto}")
-	public ResponseEntity<Produto> GeById(@PathVariable long id_produto)
+	public ResponseEntity<Produto> GeById(@PathVariable long idProduto)
 	{
-		return tb_produto_from_db.findById(id_produto).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+		return tb_produto_from_db.findById(idProduto).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 	
 	@GetMapping("/nome/{nome_produto}")
-	public ResponseEntity<List<Produto>> GetByNome(@PathVariable String nome_produto)
+	public ResponseEntity<List<Produto>> GetByNome(@PathVariable String nomeProduto)
 	{
-		return ResponseEntity.ok(tb_produto_from_db.findAllByNomeContainingIgnoreCase(nome_produto));
+		return ResponseEntity.ok(tb_produto_from_db.findAllByNomeContainingIgnoreCase(nomeProduto));
 	}
 	
 	@PostMapping
@@ -55,9 +55,9 @@ public class ProdutoController {
 		return ResponseEntity.status(HttpStatus.OK).body(tb_produto_from_db.save(json_produto));
 	}
 	
-	@DeleteMapping("/{id}")
-	public void delete(@PathVariable long id_produto)
+	@DeleteMapping("/{idProduto}")
+	public void delete(@PathVariable long idProduto)
 	{
-		tb_produto_from_db.deleteById(id_produto);
+		tb_produto_from_db.deleteById(idProduto);
 	}
 }
