@@ -1,4 +1,4 @@
-package com.gamestore.controller;
+package com.genfarmacia.controller;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gamestore.model.Produto;
-import com.gamestore.repository.ProdutoRepository;
+import com.genfarmacia.model.Produto;
+import com.genfarmacia.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping("/produtos")
@@ -26,38 +26,38 @@ public class ProdutoController {
 	ProdutoRepository tb_produto_from_db;
 	
 	@GetMapping
-	public ResponseEntity<List<Produto>> GetAll(Long idProduto)
+	public ResponseEntity<List<Produto>> findAllProduto()
 	{
 		return ResponseEntity.ok(tb_produto_from_db.findAll());
 	}
 	
-	@GetMapping("/{id_produto}")
-	public ResponseEntity<Produto> GeById(@PathVariable long idProduto)
+	@GetMapping("/{idProduto}")
+	public ResponseEntity<Produto> findByIdProduto(@PathVariable long idProduto)
 	{
 		return tb_produto_from_db.findById(idProduto).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 	
-	@GetMapping("/nome/{nomeProduto}")
-	public ResponseEntity<List<Produto>> GetByNome(@PathVariable String nomeProduto)
+	@GetMapping("/nomeproduto/{nomeProduto}")
+	public ResponseEntity<List<Produto>> findAllByNomeProduto(@PathVariable String nomeProduto)
 	{
-		return ResponseEntity.ok(tb_produto_from_db.findAllByNomeContainingIgnoreCase(nomeProduto));
+		return ResponseEntity.ok(tb_produto_from_db.findAllByNomeProdutoContainingIgnoreCase(nomeProduto));
 	}
 	
 	@PostMapping
-	public ResponseEntity<Produto> postCategoria (@RequestBody Produto json_produto)
+	public ResponseEntity<Produto> postProduto(@RequestBody Produto json_produto)
 	{
 		return ResponseEntity.status(HttpStatus.CREATED).body(tb_produto_from_db.save(json_produto));
 	}
 	
 	@PutMapping
-	public ResponseEntity<Produto> putCategoria(@RequestBody Produto json_produto)
+	public ResponseEntity<Produto> putProduto(@RequestBody Produto json_produto)
 	{
 		return ResponseEntity.status(HttpStatus.OK).body(tb_produto_from_db.save(json_produto));
 	}
 	
-	@DeleteMapping("/{idProduto}")
-	public void delete(@PathVariable long idProduto)
+	@DeleteMapping("/{id}")
+	public void deleteProduto(@PathVariable long id)
 	{
-		tb_produto_from_db.deleteById(idProduto);
+		tb_produto_from_db.deleteById(id);
 	}
 }
