@@ -22,8 +22,9 @@ import com.gamestore.repository.CategoriaRepository;
 @RequestMapping("/categorias")
 @CrossOrigin("*")
 public class CategoriaController {
-	@Autowired
+	
 	CategoriaRepository tb_categoria_from_db;
+	
 	@GetMapping
 	public ResponseEntity<List<Categoria>> GetAll(Long idCategoria)
 	{
