@@ -27,6 +27,20 @@ public class Usuario {
 	private String senhaUsuario;
 	
 	
+	
+	public Usuario(long codUsuario, @Size(min = 5, max = 100) String nomeCompleto,
+			@Size(min = 5, max = 100) String login, @Size(min = 5, max = 100) String senhaUsuario) {
+		super();
+		this.codUsuario = codUsuario;
+		this.nomeCompleto = nomeCompleto;
+		this.login = login;
+		this.senhaUsuario = senhaUsuario;
+	}
+	
+	public Usuario() {
+		super();
+	}
+
 	public long getCodUsuario() {
 		return codUsuario;
 	}
