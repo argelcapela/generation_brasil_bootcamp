@@ -5,9 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
-import com.sun.istack.NotNull;
 
 @Entity
 @Table(name = "tb_usuario")
@@ -16,30 +15,24 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long codUsuario;
-	@NotNull
+	@NotBlank
 	@Size(min = 5, max = 100)
 	private String nomeCompleto;
-	@NotNull
+	@NotBlank
 	@Size(min = 5, max = 100)
 	private String login;
-	@NotNull
+	@NotBlank
 	@Size(min = 5, max = 100)
 	private String senhaUsuario;
 	
-	
-	
-	public Usuario(long codUsuario, @Size(min = 5, max = 100) String nomeCompleto,
-			@Size(min = 5, max = 100) String login, @Size(min = 5, max = 100) String senhaUsuario) {
-		super();
+	public Usuario(long codUsuario, String nomeCompleto, String login, String senhaUsuario) {		
 		this.codUsuario = codUsuario;
 		this.nomeCompleto = nomeCompleto;
 		this.login = login;
 		this.senhaUsuario = senhaUsuario;
 	}
 	
-	public Usuario() {
-		super();
-	}
+	public Usuario() {}
 
 	public long getCodUsuario() {
 		return codUsuario;

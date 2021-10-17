@@ -11,11 +11,11 @@ import com.gamestore.model.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 	
-	Usuario findByLogin(String login);
+	public Optional<Usuario> findByLogin(String login);
 	
 	public List<Usuario> findByNomeCompletoContainingIgnoreCase(String nomeCompleto);
 	
-	public Optional<Usuario> findByLoginContainingIgnoreCase(String login);
+	public Usuario findByNomeCompleto(String nomeCompleto);
 
 	
 

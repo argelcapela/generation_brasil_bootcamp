@@ -2,8 +2,6 @@ package com.gamestore.model;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-//import java.time.LocalDate;
-//import java.time.format.DateTimeFormatter;
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
@@ -21,8 +19,8 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class UsuarioTest {
 	
-	public Usuario usuario;
-	public Usuario usuarioErro = new Usuario();
+		public Usuario usuario;
+		public Usuario usuarioNulo = new Usuario();
 	
 		@Autowired
 		private ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
@@ -30,24 +28,25 @@ public class UsuarioTest {
 		
 		@BeforeEach
 		public void start() {
-			usuario = new Usuario(0L, "João da Silva", null, null);
-			usuario = new Usuario();
+			usuario = new Usuario(0L, "João da Silva", "aaaaaaa", "aaaaaaa");
 		}
 		
 		@Test
-		@DisplayName("✔ Valida Atributos Não Nulos")
+		@DisplayName("✔ Retorna verdadeiro ,se, todos os valores são diferentes de Nulo ou vazio e as regras de tamanho são obedecidas!")
 		void testValidaAtributos() {
-			Set<ConstraintViolation<Usuario>> violacao = validator.validate(usuarioErro);
+			Set<ConstraintViolation<Usuario>> violacao = validator.validate(usuario);
 			System.out.println(violacao.toString());
-			assertTrue(violacao.isEmpty());
+			
+			assertTrue(violacao.isEmpty()); // não tem nenhum erro se o que estiver dentro dos parenteses for verdadeiro
 		}
 		
 		@Test
-		@DisplayName("👎 Valida Atributos Não Nulos")
+		@DisplayName("👎 Retorna falso ,se, existe algum valor nulo.")
 		void testNaoValidaAtributos() {
-			Set<ConstraintViolation<Usuario>> violacao = validator.validate(usuarioErro);
+			Set<ConstraintViolation<Usuario>> violacao = validator.validate(usuario);
 			System.out.println(violacao.toString());
-			assertTrue(violacao.isEmpty());
+			
+			assertTrue(violacao.isEmpty()); // não tem nenhum erro se o que estiver dentro dos parenteses for verdadeiro
 		}
 	
 }

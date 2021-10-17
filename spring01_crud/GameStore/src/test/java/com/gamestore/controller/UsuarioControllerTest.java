@@ -43,14 +43,17 @@ public class UsuarioControllerTest {
 	
 	@BeforeAll
 	public void start() {
-		if (!usuarioRepository.findByLoginContainingIgnoreCase(usuarioAdmin.getLogin()).isPresent())
+		
+		usuarioAdmin = new Usuario(0L, "admin", "admin", "admin");
+		
+		if (!usuarioRepository.findByLogin(usuarioAdmin.getLogin()).isPresent())
 		{
 			HttpEntity<Usuario> request = new HttpEntity<Usuario>(usuarioAdmin);
-			testRestTemplate.exchange("/usuarios/cadastrar", HttpMethod.POST, request, Usuario.class);
-			
-			usuario = new Usuario(0L, "jesus", "jesus", "jesus");			
-			usuarioUpdate = new Usuario(2L, "pedro", "pedro", "pedro");
+			testRestTemplate.exchange("/usuarios/cadastrar", HttpMethod.POST, request, Usuario.class);	
 		}	
+		
+		usuario = new Usuario(0L, "jesus", "jesus", "jesus");			
+		usuarioUpdate = new Usuario(2L, "jesus cristo", "jesus", "jesus");	
 	}
 	
 	@Test
@@ -66,7 +69,7 @@ public class UsuarioControllerTest {
 	@Order(2)
 	@DisplayName("👍 Listar todos os Usuários!")
 	public void deveMostrarTodosOsUsuarios() {
-		ResponseEntity<String> resposta = testRestTemplate.withBasicAuth("root", "root").exchange("/usuarios/all", HttpMethod.GET, null, String.class);
+		ResponseEntity<String> resposta = testRestTemplate.withBasicAuth("admin", "admin").exchange("/usuarios", HttpMethod.GET, null, String.class);
 		assertEquals(HttpStatus.OK, resposta.getStatusCode());
 	}
 	
@@ -75,7 +78,7 @@ public class UsuarioControllerTest {
 	@DisplayName("😊 Alterar Usuário!")
 	public void deveRealizarPutUsuario() {
 		HttpEntity<Usuario> request = new HttpEntity<Usuario>(usuarioUpdate);		
-		ResponseEntity<Usuario> resposta = testRestTemplate.withBasicAuth("root", "root").exchange("/usuarios/atualizar", HttpMethod.PUT, request, Usuario.class);
+		ResponseEntity<Usuario> resposta = testRestTemplate.withBasicAuth("admin", "admin").exchange("/usuarios", HttpMethod.PUT, request, Usuario.class);
 		assertEquals(HttpStatus.OK, resposta.getStatusCode());
 	}
 	

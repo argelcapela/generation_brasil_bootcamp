@@ -24,37 +24,36 @@ public class UsuarioRepositoryTest{
 	
 	@BeforeAll
 	 void start() {
-		//LocalDate data = LocalDate.parse("2000-07-22", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 		
 		Usuario usuario = new Usuario(0, "pedro", "pedro", "pedro");
-		if(!usuarioRepository.findByLoginContainingIgnoreCase(usuario.getLogin()).isPresent())
+		if(!usuarioRepository.findByLogin(usuario.getLogin()).isPresent())
 			usuarioRepository.save(usuario);
 		
 		usuario = new Usuario(0, "thiago", "thiago", "thiago");
-		if(!usuarioRepository.findByLoginContainingIgnoreCase(usuario.getLogin()).isPresent())
+		if(!usuarioRepository.findByLogin(usuario.getLogin()).isPresent())
 			usuarioRepository.save(usuario);
 		
-		usuario = new Usuario(0, "joão", "joão", "joão");
-		if(!usuarioRepository.findByLoginContainingIgnoreCase(usuario.getLogin()).isPresent())
+		usuario = new Usuario(0, "joãoa", "joãoa", "joãoa");
+		if(!usuarioRepository.findByLogin(usuario.getLogin()).isPresent())
 			usuarioRepository.save(usuario);
 		
 		usuario = new Usuario(0, "judas", "judas", "judas");
-		if(!usuarioRepository.findByLoginContainingIgnoreCase(usuario.getLogin()).isPresent())
+		if(!usuarioRepository.findByLogin(usuario.getLogin()).isPresent())
 			usuarioRepository.save(usuario);
 	}
 	
 	@Test
 	@DisplayName("💾 Retorna o nome!")
 	void findByLoginTest() throws Exception {
-		Usuario usuario = usuarioRepository.findByLogin("pedro");
+		Usuario usuario = usuarioRepository.findByNomeCompleto("pedro");
 		assertTrue(usuario.getLogin().equals("pedro"));
 	}
 	
 	@Test
 	@DisplayName("💾 Retorna 3 nomes!")
 	void findByNomeContainingIgnoreCaseRetornaTresUsuarios() throws Exception {
-		List<Usuario> usuarios = usuarioRepository.findByNomeCompletoContainingIgnoreCase("jesus");
-		assertEquals(3, usuarios.size());
+		List<Usuario> usuarios = usuarioRepository.findByNomeCompletoContainingIgnoreCase("j");
+		assertEquals(2, usuarios.size());
 	}
 	
 	@AfterAll
