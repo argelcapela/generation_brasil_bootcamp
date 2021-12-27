@@ -10,7 +10,7 @@
 Esse repositório contém muitos dos exercícios desenvolvidos durante o Programa Imersivo para formação de Pessoas Desenvolvedoras Java Júnior Fullstack da Generation Brasil. Com uma duração de 3 meses, de agosto a novembro do ano de 2021. Com uma carga horário de segunda a sexta das 8hrs as 17hrs. O aprendizado foi gigantesco. Habilidades comportamentais, desenvolvimento de uma rotina pessoal de estudos semelhante ao mercado de trabalho. Desenvolvimento de diversos projetos em grupo. Sem falar no aprendizado de como desenvolver API(s) profissionais com Java e Spring Boot. Experiência sensacional e transformadora.
 </div>
 
-<div class="row">
+<div class="col-12">
 
 ## :wrench: Tecnologias utilizadas:<br>
 <div style="display: inline_block">
@@ -23,7 +23,7 @@ Esse repositório contém muitos dos exercícios desenvolvidos durante o Program
 
 </div>
 
-<div class="row">
+<div class="col-12">
     
 ## :books: Módulos do Curso:<br>
 <table class="special-border">
@@ -65,7 +65,7 @@ Esse repositório contém muitos dos exercícios desenvolvidos durante o Program
     
 </div>
 
-<div class="row">
+<div class="col-12">
 
 ## :rocket: Rodando o projeto:<br>
     
@@ -73,14 +73,14 @@ Esse repositório contém muitos dos exercícios desenvolvidos durante o Program
 <li>Link Oficial do Bootcamp Generation Brasil: <a href="https://brazil.generation.org/sao-paulo/pessoa-desenvolvedora-web/">Link</a></li>
  
 </div>
-<div class="row">
+<div class="col-12">
 
 ## :soon: Implementação futura:<br>
     
 <li>Nada em mente por enquanto.</li>
     
 </div>
-<div class="row">
+<div class="col-12">
     
 
 ## :handshake: Colaboradores:<br>
@@ -97,7 +97,7 @@ Esse repositório contém muitos dos exercícios desenvolvidos durante o Program
   </tr>
 </table>
 </div>
-<div class="row">
+<div class="col-12">
     
 ## :dart: Status do projeto:<br>
 
